@@ -1,0 +1,11 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /properties
+
+
+
+### 个人自定义参数
+bibig:
+  name: kubert
+  phone: 15521291594
