@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PropertyController {
 
+
     @Autowired
     private ApplicationProperty applicationProperty;
+
     @Autowired
     private PersonalProperty personalProperty;
 
@@ -21,4 +23,6 @@ public class PropertyController {
     public Dict getPro(){
         return Dict.create().set("app",applicationProperty).set("person",personalProperty);
     }
+
+
 }
