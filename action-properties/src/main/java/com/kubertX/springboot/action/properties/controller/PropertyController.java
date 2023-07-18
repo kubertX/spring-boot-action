@@ -1,9 +1,8 @@
-package com.kubertX.properties.controller;
+package com.kubertX.springboot.action.properties.controller;
 
 import cn.hutool.core.lang.Dict;
-import com.kubertX.properties.properties.ApplicationProperty;
-import com.kubertX.properties.properties.PersonalProperty;
-import lombok.Data;
+import com.kubertX.springboot.action.properties.properties.ApplicationProperty;
+import com.kubertX.springboot.action.properties.properties.PersonalProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

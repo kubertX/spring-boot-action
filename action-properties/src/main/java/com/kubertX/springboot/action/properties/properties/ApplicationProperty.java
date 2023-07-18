@@ -1,4 +1,4 @@
-package com.kubertX.properties.properties;
+package com.kubertX.springboot.action.properties.properties;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

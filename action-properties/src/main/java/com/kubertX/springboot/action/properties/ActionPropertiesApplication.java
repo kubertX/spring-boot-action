@@ -1,4 +1,4 @@
-package com.kubertX.properties;
+package com.kubertX.springboot.action.properties;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
