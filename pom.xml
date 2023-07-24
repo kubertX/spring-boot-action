@@ -12,6 +12,7 @@
         <module>action-properties</module>
         <module>action-orm-mybatis</module>
         <module>action-logback</module>
+        <module>action-actuator</module>
     </modules>
 
     <!-- 框架/中间件版本统一管理-->
@@ -41,7 +42,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <scope>test</scope>z
         </dependency>
 
         <dependency>

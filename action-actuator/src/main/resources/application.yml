@@ -1,0 +1,38 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /act
+
+# <-- actuator 相关配置 start  -->
+management:
+  # 端点信息接口使用的端口，为了和主系统接口使用的端口进行分离
+  server:
+    port: 8088
+    base-path: /sys
+
+  # 端点健康情况，默认值"never"，设置为"always"可以显示硬盘使用情况和线程情况
+  endpoint:
+    # 启用 health 端点
+    health:
+      enabled: true
+      show-details: always
+    # 启用 shutdown 端点
+    shutdown:
+      enabled: false
+
+  # 设置端点暴露的哪些内容，默认["health","info"]，设置"*"代表暴露所有可访问的端点
+  endpoints:
+    web:
+      # 修改基本路径，默认 ${management.server.base-path}/${endpoints.web.base-path:/actuator}
+      base-path: /monitor
+      # 设置端点暴露的哪些内容，默认["health","info"]，设置"*"代表暴露所有可访问的端点
+      exposure:
+        include: '*'
+# <-- acturtor 相关配置 end -->
+
+bibig:
+  user:
+    name: X
+    email: halo@X.com
+    phone: 13xxxxxxxx
+    address: shenzhen
