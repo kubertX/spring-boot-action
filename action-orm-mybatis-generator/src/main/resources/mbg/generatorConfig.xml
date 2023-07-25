@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- ！！！标签之间的顺序不能发生变化 -->
+    <properties resource="mbg/generator.properties"/>
+    <context id="MySqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
+        <!-- 配置SQL语句中的前置分隔符 -->
+        <property name="beginningDelimiter" value="`"/>
+        <!-- 配置SQL语句中的后置分隔符 -->
+        <property name="endingDelimiter" value="`"/>
+        <!-- 配置生成Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!--生成mapper.xml时覆盖原文件-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+        <!-- 为模型生成序列化方法-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!-- 为生成的Java模型创建一个toString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <!--可以自定义生成model的代码注释-->
+        <commentGenerator type="com.kubertX.springboot.action.orm.mybatis.generator.config.generator.CommentGenerator">
+            <!-- 是否阻止生成的注释 -->
+            <property name="suppressAllComments" value="true"/>
+            <!-- 是否阻止生成的注释包含时间戳 -->
+            <property name="suppressDate" value="true"/>
+            <!-- 是否添加数据库表的备注信息 -->
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+        <!-- 配置MBG要连接的数据库信息 -->
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.connectionURL}"
+                        userId="${jdbc.username}"
+                        password="${jdbc.password}">
+            <!-- 解决mysql驱动升级到8.0后不生成指定数据库代码的问题 -->
+            <property name="nullCatalogMeansCurrent" value="true" />
+        </jdbcConnection>
+        <!-- 用于控制实体类的生成 -->
+        <javaModelGenerator targetPackage="com.kubertX.springboot.action.orm.mybatis.generator.model" targetProject="action-orm-mybatis-generator\src\main\java"/>
+        <!-- 用于控制Mapper.xml文件的生成 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="action-orm-mybatis-generator\src\main\resources"/>
+        <!-- 用于控制Mapper接口的生成 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.kubertX.springboot.action.orm.mybatis.generator.mapper"
+                             targetProject="action-orm-mybatis-generator\src\main\java"/>
+        <!--  指定数据库表，要生成哪些表，就写哪些表，要和数据库中对应，不能写错！
+                    生成全部表tableName设为%
+                    enableXXXExample=false 设置不生成 Example 类
+        -->
+        <table tableName="%"
+            enableCountByExample="false"
+            enableUpdateByExample="false"
+            enableDeleteByExample="false"
+            enableSelectByExample="false"
+            selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <!--<table tableName="ums_admin">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        -->
+    </context>
+</generatorConfiguration>

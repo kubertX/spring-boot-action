@@ -10,7 +10,7 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-    # 连接池 hikari 配置
+    # springboot 默认连接池 hikari 配置
     hikari:
       # 最小连接数
       minimum-idle: 5
