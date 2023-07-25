@@ -15,6 +15,7 @@
         <module>action-actuator</module>
         <module>action-orm-mybatis-generator</module>
         <module>action-orm-mybatis-pagehelper</module>
+        <module>action-swagger</module>
     </modules>
 
     <!-- 框架/中间件版本统一管理-->
