@@ -37,12 +37,12 @@
             <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
         <!-- 用于控制实体类的生成 -->
-        <javaModelGenerator targetPackage="com.kubertX.springboot.action.orm.mybatis.generator.model" targetProject="action-orm-mybatis-generator\src\main\java"/>
+        <javaModelGenerator targetPackage="com.kubertX.mallX.admin.model" targetProject="E:\idea-workspace\mallX\mallX-admin\src\main\java"/>
         <!-- 用于控制Mapper.xml文件的生成 -->
-        <sqlMapGenerator targetPackage="mapper" targetProject="action-orm-mybatis-generator\src\main\resources"/>
+        <sqlMapGenerator targetPackage="mapper" targetProject="E:\idea-workspace\mallX\mallX-admin\src\main\resources"/>
         <!-- 用于控制Mapper接口的生成 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.kubertX.springboot.action.orm.mybatis.generator.mapper"
-                             targetProject="action-orm-mybatis-generator\src\main\java"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.kubertX.mallX.admin.mapper"
+                             targetProject="E:\idea-workspace\mallX\mallX-admin\src\main\java"/>
         <!--  指定数据库表，要生成哪些表，就写哪些表，要和数据库中对应，不能写错！
                     生成全部表tableName设为%
                     enableXXXExample=false 设置不生成 Example 类
