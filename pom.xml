@@ -18,6 +18,7 @@
         <module>action-swagger</module>
         <module>action-cache-redis</module>
         <module>action-test-junit5</module>
+        <module>action-mq-kafka</module>
     </modules>
 
     <!-- 框架/中间件版本统一管理-->
