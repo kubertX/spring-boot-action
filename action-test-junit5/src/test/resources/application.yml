@@ -1,0 +1,8 @@
+
+spring:
+  profiles:
+    active: local
+
+bibig:
+  name: halo
+  from: china

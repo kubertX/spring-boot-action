@@ -17,6 +17,7 @@
         <module>action-orm-mybatis-pagehelper</module>
         <module>action-swagger</module>
         <module>action-cache-redis</module>
+        <module>action-test-junit5</module>
     </modules>
 
     <!-- 框架/中间件版本统一管理-->
@@ -48,12 +49,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.projectlombok</groupId>

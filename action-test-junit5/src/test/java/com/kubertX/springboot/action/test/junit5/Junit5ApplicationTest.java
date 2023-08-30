@@ -1,14 +1,10 @@
-package com.kubertX.springboot.action.cache.redis;
-
+package com.kubertX.springboot.action.test.junit5;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
-//@RunWith(SpringRunner.class)
 @SpringBootTest
-public class RedisApplicationTest {
-
+public class Junit5ApplicationTest {
 
     @Test
     public void contextLoads(){

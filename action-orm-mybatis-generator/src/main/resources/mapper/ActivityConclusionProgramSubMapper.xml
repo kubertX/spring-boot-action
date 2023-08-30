@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kubertX.springboot.action.orm.mybatis.generator.mapper.ActivityConclusionProgramSubMapper">
+  <resultMap id="BaseResultMap" type="com.kubertX.springboot.action.orm.mybatis.generator.model.ActivityConclusionProgramSub">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="ACTIVITY_CONCLUSION_ID" jdbcType="INTEGER" property="activityConclusionId" />
+    <result column="ACTIVITY_PROGRAM_ID" jdbcType="INTEGER" property="activityProgramId" />
+    <result column="ACTIVITY_PROGRAM_SUB_ID" jdbcType="INTEGER" property="activityProgramSubId" />
+    <result column="ACTUAL_COST" jdbcType="DECIMAL" property="actualCost" />
+    <result column="ACTUAL_COST_MALL" jdbcType="DECIMAL" property="actualCostMall" />
+    <result column="ACTUAL_COST_TENANT" jdbcType="DECIMAL" property="actualCostTenant" />
+    <result column="ACTUAL_COST_THIRD" jdbcType="DECIMAL" property="actualCostThird" />
+    <result column="ACTUAL_COST_PR" jdbcType="DECIMAL" property="actualCostPr" />
+    <result column="ACTUAL_COST_MALL_PR" jdbcType="DECIMAL" property="actualCostMallPr" />
+    <result column="ACTUAL_COST_TENANT_PR" jdbcType="DECIMAL" property="actualCostTenantPr" />
+    <result column="ACTUAL_COST_THIRD_PR" jdbcType="DECIMAL" property="actualCostThirdPr" />
+    <result column="ACTUAL_COST_SP" jdbcType="DECIMAL" property="actualCostSp" />
+    <result column="ACTUAL_COST_MALL_SP" jdbcType="DECIMAL" property="actualCostMallSp" />
+    <result column="ACTUAL_COST_TENANT_SP" jdbcType="DECIMAL" property="actualCostTenantSp" />
+    <result column="ACTUAL_COST_THIRD_SP" jdbcType="DECIMAL" property="actualCostThirdSp" />
+    <result column="ACTUAL_COST_CRM" jdbcType="DECIMAL" property="actualCostCrm" />
+    <result column="ACTUAL_COST_MALL_CRM" jdbcType="DECIMAL" property="actualCostMallCrm" />
+    <result column="ACTUAL_COST_TENANT_CRM" jdbcType="DECIMAL" property="actualCostTenantCrm" />
+    <result column="ACTUAL_COST_THIRD_CRM" jdbcType="DECIMAL" property="actualCostThirdCrm" />
+    <result column="ACTUAL_COST_EC" jdbcType="DECIMAL" property="actualCostEc" />
+    <result column="ACTUAL_COST_MALL_EC" jdbcType="DECIMAL" property="actualCostMallEc" />
+    <result column="ACTUAL_COST_TENANT_EC" jdbcType="DECIMAL" property="actualCostTenantEc" />
+    <result column="ACTUAL_COST_THIRD_EC" jdbcType="DECIMAL" property="actualCostThirdEc" />
+    <result column="IS_DELETED" jdbcType="VARCHAR" property="isDeleted" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_BY_NAME" jdbcType="VARCHAR" property="createByName" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="LAST_UPDATE_BY" jdbcType="VARCHAR" property="lastUpdateBy" />
+    <result column="LAST_UPDATE_BY_NAME" jdbcType="VARCHAR" property="lastUpdateByName" />
+    <result column="LAST_UPDATE_DATE" jdbcType="TIMESTAMP" property="lastUpdateDate" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, ACTIVITY_CONCLUSION_ID, ACTIVITY_PROGRAM_ID, ACTIVITY_PROGRAM_SUB_ID, ACTUAL_COST, 
+    ACTUAL_COST_MALL, ACTUAL_COST_TENANT, ACTUAL_COST_THIRD, ACTUAL_COST_PR, ACTUAL_COST_MALL_PR, 
+    ACTUAL_COST_TENANT_PR, ACTUAL_COST_THIRD_PR, ACTUAL_COST_SP, ACTUAL_COST_MALL_SP, 
+    ACTUAL_COST_TENANT_SP, ACTUAL_COST_THIRD_SP, ACTUAL_COST_CRM, ACTUAL_COST_MALL_CRM, 
+    ACTUAL_COST_TENANT_CRM, ACTUAL_COST_THIRD_CRM, ACTUAL_COST_EC, ACTUAL_COST_MALL_EC, 
+    ACTUAL_COST_TENANT_EC, ACTUAL_COST_THIRD_EC, IS_DELETED, CREATE_BY, CREATE_BY_NAME, 
+    CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_BY_NAME, LAST_UPDATE_DATE
+  </sql>
+  <select id="selectByExample" parameterType="com.kubertX.springboot.action.orm.mybatis.generator.model.ActivityConclusionProgramSubExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from activity_conclusion_program_sub
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from activity_conclusion_program_sub
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from activity_conclusion_program_sub
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.kubertX.springboot.action.orm.mybatis.generator.model.ActivityConclusionProgramSubExample">
+    delete from activity_conclusion_program_sub
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.kubertX.springboot.action.orm.mybatis.generator.model.ActivityConclusionProgramSub">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into activity_conclusion_program_sub (ACTIVITY_CONCLUSION_ID, ACTIVITY_PROGRAM_ID, 
+      ACTIVITY_PROGRAM_SUB_ID, ACTUAL_COST, ACTUAL_COST_MALL, 
+      ACTUAL_COST_TENANT, ACTUAL_COST_THIRD, ACTUAL_COST_PR, 
+      ACTUAL_COST_MALL_PR, ACTUAL_COST_TENANT_PR, ACTUAL_COST_THIRD_PR, 
+      ACTUAL_COST_SP, ACTUAL_COST_MALL_SP, ACTUAL_COST_TENANT_SP, 
+      ACTUAL_COST_THIRD_SP, ACTUAL_COST_CRM, ACTUAL_COST_MALL_CRM, 
+      ACTUAL_COST_TENANT_CRM, ACTUAL_COST_THIRD_CRM, 
+      ACTUAL_COST_EC, ACTUAL_COST_MALL_EC, ACTUAL_COST_TENANT_EC, 
+      ACTUAL_COST_THIRD_EC, IS_DELETED, CREATE_BY, 
+      CREATE_BY_NAME, CREATE_DATE, LAST_UPDATE_BY, 
+      LAST_UPDATE_BY_NAME, LAST_UPDATE_DATE)
+    values (#{activityConclusionId,jdbcType=INTEGER}, #{activityProgramId,jdbcType=INTEGER}, 
+      #{activityProgramSubId,jdbcType=INTEGER}, #{actualCost,jdbcType=DECIMAL}, #{actualCostMall,jdbcType=DECIMAL}, 
+      #{actualCostTenant,jdbcType=DECIMAL}, #{actualCostThird,jdbcType=DECIMAL}, #{actualCostPr,jdbcType=DECIMAL}, 
+      #{actualCostMallPr,jdbcType=DECIMAL}, #{actualCostTenantPr,jdbcType=DECIMAL}, #{actualCostThirdPr,jdbcType=DECIMAL}, 
+      #{actualCostSp,jdbcType=DECIMAL}, #{actualCostMallSp,jdbcType=DECIMAL}, #{actualCostTenantSp,jdbcType=DECIMAL}, 
+      #{actualCostThirdSp,jdbcType=DECIMAL}, #{actualCostCrm,jdbcType=DECIMAL}, #{actualCostMallCrm,jdbcType=DECIMAL}, 
+      #{actualCostTenantCrm,jdbcType=DECIMAL}, #{actualCostThirdCrm,jdbcType=DECIMAL}, 
+      #{actualCostEc,jdbcType=DECIMAL}, #{actualCostMallEc,jdbcType=DECIMAL}, #{actualCostTenantEc,jdbcType=DECIMAL}, 
+      #{actualCostThirdEc,jdbcType=DECIMAL}, #{isDeleted,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, 
+      #{createByName,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=VARCHAR}, 
+      #{lastUpdateByName,jdbcType=VARCHAR}, #{lastUpdateDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.kubertX.springboot.action.orm.mybatis.generator.model.ActivityConclusionProgramSub">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into activity_conclusion_program_sub
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="activityConclusionId != null">
+        ACTIVITY_CONCLUSION_ID,
+      </if>
+      <if test="activityProgramId != null">
+        ACTIVITY_PROGRAM_ID,
+      </if>
+      <if test="activityProgramSubId != null">
+        ACTIVITY_PROGRAM_SUB_ID,
+      </if>
+      <if test="actualCost != null">
+        ACTUAL_COST,
+      </if>
+      <if test="actualCostMall != null">
+        ACTUAL_COST_MALL,
+      </if>
+      <if test="actualCostTenant != null">
+        ACTUAL_COST_TENANT,
+      </if>
+      <if test="actualCostThird != null">
+        ACTUAL_COST_THIRD,
+      </if>
+      <if test="actualCostPr != null">
+        ACTUAL_COST_PR,
+      </if>
+      <if test="actualCostMallPr != null">
+        ACTUAL_COST_MALL_PR,
+      </if>
+      <if test="actualCostTenantPr != null">
+        ACTUAL_COST_TENANT_PR,
+      </if>
+      <if test="actualCostThirdPr != null">
+        ACTUAL_COST_THIRD_PR,
+      </if>
+      <if test="actualCostSp != null">
+        ACTUAL_COST_SP,
+      </if>
+      <if test="actualCostMallSp != null">
+        ACTUAL_COST_MALL_SP,
+      </if>
+      <if test="actualCostTenantSp != null">
+        ACTUAL_COST_TENANT_SP,
+      </if>
+      <if test="actualCostThirdSp != null">
+        ACTUAL_COST_THIRD_SP,
+      </if>
+      <if test="actualCostCrm != null">
+        ACTUAL_COST_CRM,
+      </if>
+      <if test="actualCostMallCrm != null">
+        ACTUAL_COST_MALL_CRM,
+      </if>
+      <if test="actualCostTenantCrm != null">
+        ACTUAL_COST_TENANT_CRM,
+      </if>
+      <if test="actualCostThirdCrm != null">
+        ACTUAL_COST_THIRD_CRM,
+      </if>
+      <if test="actualCostEc != null">
+        ACTUAL_COST_EC,
+      </if>
+      <if test="actualCostMallEc != null">
+        ACTUAL_COST_MALL_EC,
+      </if>
+      <if test="actualCostTenantEc != null">
+        ACTUAL_COST_TENANT_EC,
+      </if>
+      <if test="actualCostThirdEc != null">
+        ACTUAL_COST_THIRD_EC,
+      </if>
+      <if test="isDeleted != null">
+        IS_DELETED,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="createByName != null">
+        CREATE_BY_NAME,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="lastUpdateBy != null">
+        LAST_UPDATE_BY,
+      </if>
+      <if test="lastUpdateByName != null">
+        LAST_UPDATE_BY_NAME,
+      </if>
+      <if test="lastUpdateDate != null">
+        LAST_UPDATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="activityConclusionId != null">
+        #{activityConclusionId,jdbcType=INTEGER},
+      </if>
+      <if test="activityProgramId != null">
+        #{activityProgramId,jdbcType=INTEGER},
+      </if>
+      <if test="activityProgramSubId != null">
+        #{activityProgramSubId,jdbcType=INTEGER},
+      </if>
+      <if test="actualCost != null">
+        #{actualCost,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostMall != null">
+        #{actualCostMall,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostTenant != null">
+        #{actualCostTenant,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostThird != null">
+        #{actualCostThird,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostPr != null">
+        #{actualCostPr,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostMallPr != null">
+        #{actualCostMallPr,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostTenantPr != null">
+        #{actualCostTenantPr,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostThirdPr != null">
+        #{actualCostThirdPr,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostSp != null">
+        #{actualCostSp,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostMallSp != null">
+        #{actualCostMallSp,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostTenantSp != null">
+        #{actualCostTenantSp,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostThirdSp != null">
+        #{actualCostThirdSp,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostCrm != null">
+        #{actualCostCrm,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostMallCrm != null">
+        #{actualCostMallCrm,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostTenantCrm != null">
+        #{actualCostTenantCrm,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostThirdCrm != null">
+        #{actualCostThirdCrm,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostEc != null">
+        #{actualCostEc,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostMallEc != null">
+        #{actualCostMallEc,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostTenantEc != null">
+        #{actualCostTenantEc,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostThirdEc != null">
+        #{actualCostThirdEc,jdbcType=DECIMAL},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createByName != null">
+        #{createByName,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateBy != null">
+        #{lastUpdateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateByName != null">
+        #{lastUpdateByName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateDate != null">
+        #{lastUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.kubertX.springboot.action.orm.mybatis.generator.model.ActivityConclusionProgramSubExample" resultType="java.lang.Long">
+    select count(*) from activity_conclusion_program_sub
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update activity_conclusion_program_sub
+    <set>
+      <if test="row.id != null">
+        ID = #{row.id,jdbcType=INTEGER},
+      </if>
+      <if test="row.activityConclusionId != null">
+        ACTIVITY_CONCLUSION_ID = #{row.activityConclusionId,jdbcType=INTEGER},
+      </if>
+      <if test="row.activityProgramId != null">
+        ACTIVITY_PROGRAM_ID = #{row.activityProgramId,jdbcType=INTEGER},
+      </if>
+      <if test="row.activityProgramSubId != null">
+        ACTIVITY_PROGRAM_SUB_ID = #{row.activityProgramSubId,jdbcType=INTEGER},
+      </if>
+      <if test="row.actualCost != null">
+        ACTUAL_COST = #{row.actualCost,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostMall != null">
+        ACTUAL_COST_MALL = #{row.actualCostMall,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostTenant != null">
+        ACTUAL_COST_TENANT = #{row.actualCostTenant,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostThird != null">
+        ACTUAL_COST_THIRD = #{row.actualCostThird,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostPr != null">
+        ACTUAL_COST_PR = #{row.actualCostPr,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostMallPr != null">
+        ACTUAL_COST_MALL_PR = #{row.actualCostMallPr,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostTenantPr != null">
+        ACTUAL_COST_TENANT_PR = #{row.actualCostTenantPr,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostThirdPr != null">
+        ACTUAL_COST_THIRD_PR = #{row.actualCostThirdPr,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostSp != null">
+        ACTUAL_COST_SP = #{row.actualCostSp,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostMallSp != null">
+        ACTUAL_COST_MALL_SP = #{row.actualCostMallSp,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostTenantSp != null">
+        ACTUAL_COST_TENANT_SP = #{row.actualCostTenantSp,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostThirdSp != null">
+        ACTUAL_COST_THIRD_SP = #{row.actualCostThirdSp,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostCrm != null">
+        ACTUAL_COST_CRM = #{row.actualCostCrm,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostMallCrm != null">
+        ACTUAL_COST_MALL_CRM = #{row.actualCostMallCrm,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostTenantCrm != null">
+        ACTUAL_COST_TENANT_CRM = #{row.actualCostTenantCrm,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostThirdCrm != null">
+        ACTUAL_COST_THIRD_CRM = #{row.actualCostThirdCrm,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostEc != null">
+        ACTUAL_COST_EC = #{row.actualCostEc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostMallEc != null">
+        ACTUAL_COST_MALL_EC = #{row.actualCostMallEc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostTenantEc != null">
+        ACTUAL_COST_TENANT_EC = #{row.actualCostTenantEc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.actualCostThirdEc != null">
+        ACTUAL_COST_THIRD_EC = #{row.actualCostThirdEc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.isDeleted != null">
+        IS_DELETED = #{row.isDeleted,jdbcType=VARCHAR},
+      </if>
+      <if test="row.createBy != null">
+        CREATE_BY = #{row.createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="row.createByName != null">
+        CREATE_BY_NAME = #{row.createByName,jdbcType=VARCHAR},
+      </if>
+      <if test="row.createDate != null">
+        CREATE_DATE = #{row.createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.lastUpdateBy != null">
+        LAST_UPDATE_BY = #{row.lastUpdateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="row.lastUpdateByName != null">
+        LAST_UPDATE_BY_NAME = #{row.lastUpdateByName,jdbcType=VARCHAR},
+      </if>
+      <if test="row.lastUpdateDate != null">
+        LAST_UPDATE_DATE = #{row.lastUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update activity_conclusion_program_sub
+    set ID = #{row.id,jdbcType=INTEGER},
+      ACTIVITY_CONCLUSION_ID = #{row.activityConclusionId,jdbcType=INTEGER},
+      ACTIVITY_PROGRAM_ID = #{row.activityProgramId,jdbcType=INTEGER},
+      ACTIVITY_PROGRAM_SUB_ID = #{row.activityProgramSubId,jdbcType=INTEGER},
+      ACTUAL_COST = #{row.actualCost,jdbcType=DECIMAL},
+      ACTUAL_COST_MALL = #{row.actualCostMall,jdbcType=DECIMAL},
+      ACTUAL_COST_TENANT = #{row.actualCostTenant,jdbcType=DECIMAL},
+      ACTUAL_COST_THIRD = #{row.actualCostThird,jdbcType=DECIMAL},
+      ACTUAL_COST_PR = #{row.actualCostPr,jdbcType=DECIMAL},
+      ACTUAL_COST_MALL_PR = #{row.actualCostMallPr,jdbcType=DECIMAL},
+      ACTUAL_COST_TENANT_PR = #{row.actualCostTenantPr,jdbcType=DECIMAL},
+      ACTUAL_COST_THIRD_PR = #{row.actualCostThirdPr,jdbcType=DECIMAL},
+      ACTUAL_COST_SP = #{row.actualCostSp,jdbcType=DECIMAL},
+      ACTUAL_COST_MALL_SP = #{row.actualCostMallSp,jdbcType=DECIMAL},
+      ACTUAL_COST_TENANT_SP = #{row.actualCostTenantSp,jdbcType=DECIMAL},
+      ACTUAL_COST_THIRD_SP = #{row.actualCostThirdSp,jdbcType=DECIMAL},
+      ACTUAL_COST_CRM = #{row.actualCostCrm,jdbcType=DECIMAL},
+      ACTUAL_COST_MALL_CRM = #{row.actualCostMallCrm,jdbcType=DECIMAL},
+      ACTUAL_COST_TENANT_CRM = #{row.actualCostTenantCrm,jdbcType=DECIMAL},
+      ACTUAL_COST_THIRD_CRM = #{row.actualCostThirdCrm,jdbcType=DECIMAL},
+      ACTUAL_COST_EC = #{row.actualCostEc,jdbcType=DECIMAL},
+      ACTUAL_COST_MALL_EC = #{row.actualCostMallEc,jdbcType=DECIMAL},
+      ACTUAL_COST_TENANT_EC = #{row.actualCostTenantEc,jdbcType=DECIMAL},
+      ACTUAL_COST_THIRD_EC = #{row.actualCostThirdEc,jdbcType=DECIMAL},
+      IS_DELETED = #{row.isDeleted,jdbcType=VARCHAR},
+      CREATE_BY = #{row.createBy,jdbcType=VARCHAR},
+      CREATE_BY_NAME = #{row.createByName,jdbcType=VARCHAR},
+      CREATE_DATE = #{row.createDate,jdbcType=TIMESTAMP},
+      LAST_UPDATE_BY = #{row.lastUpdateBy,jdbcType=VARCHAR},
+      LAST_UPDATE_BY_NAME = #{row.lastUpdateByName,jdbcType=VARCHAR},
+      LAST_UPDATE_DATE = #{row.lastUpdateDate,jdbcType=TIMESTAMP}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kubertX.springboot.action.orm.mybatis.generator.model.ActivityConclusionProgramSub">
+    update activity_conclusion_program_sub
+    <set>
+      <if test="activityConclusionId != null">
+        ACTIVITY_CONCLUSION_ID = #{activityConclusionId,jdbcType=INTEGER},
+      </if>
+      <if test="activityProgramId != null">
+        ACTIVITY_PROGRAM_ID = #{activityProgramId,jdbcType=INTEGER},
+      </if>
+      <if test="activityProgramSubId != null">
+        ACTIVITY_PROGRAM_SUB_ID = #{activityProgramSubId,jdbcType=INTEGER},
+      </if>
+      <if test="actualCost != null">
+        ACTUAL_COST = #{actualCost,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostMall != null">
+        ACTUAL_COST_MALL = #{actualCostMall,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostTenant != null">
+        ACTUAL_COST_TENANT = #{actualCostTenant,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostThird != null">
+        ACTUAL_COST_THIRD = #{actualCostThird,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostPr != null">
+        ACTUAL_COST_PR = #{actualCostPr,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostMallPr != null">
+        ACTUAL_COST_MALL_PR = #{actualCostMallPr,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostTenantPr != null">
+        ACTUAL_COST_TENANT_PR = #{actualCostTenantPr,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostThirdPr != null">
+        ACTUAL_COST_THIRD_PR = #{actualCostThirdPr,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostSp != null">
+        ACTUAL_COST_SP = #{actualCostSp,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostMallSp != null">
+        ACTUAL_COST_MALL_SP = #{actualCostMallSp,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostTenantSp != null">
+        ACTUAL_COST_TENANT_SP = #{actualCostTenantSp,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostThirdSp != null">
+        ACTUAL_COST_THIRD_SP = #{actualCostThirdSp,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostCrm != null">
+        ACTUAL_COST_CRM = #{actualCostCrm,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostMallCrm != null">
+        ACTUAL_COST_MALL_CRM = #{actualCostMallCrm,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostTenantCrm != null">
+        ACTUAL_COST_TENANT_CRM = #{actualCostTenantCrm,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostThirdCrm != null">
+        ACTUAL_COST_THIRD_CRM = #{actualCostThirdCrm,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostEc != null">
+        ACTUAL_COST_EC = #{actualCostEc,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostMallEc != null">
+        ACTUAL_COST_MALL_EC = #{actualCostMallEc,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostTenantEc != null">
+        ACTUAL_COST_TENANT_EC = #{actualCostTenantEc,jdbcType=DECIMAL},
+      </if>
+      <if test="actualCostThirdEc != null">
+        ACTUAL_COST_THIRD_EC = #{actualCostThirdEc,jdbcType=DECIMAL},
+      </if>
+      <if test="isDeleted != null">
+        IS_DELETED = #{isDeleted,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createByName != null">
+        CREATE_BY_NAME = #{createByName,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateBy != null">
+        LAST_UPDATE_BY = #{lastUpdateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateByName != null">
+        LAST_UPDATE_BY_NAME = #{lastUpdateByName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateDate != null">
+        LAST_UPDATE_DATE = #{lastUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kubertX.springboot.action.orm.mybatis.generator.model.ActivityConclusionProgramSub">
+    update activity_conclusion_program_sub
+    set ACTIVITY_CONCLUSION_ID = #{activityConclusionId,jdbcType=INTEGER},
+      ACTIVITY_PROGRAM_ID = #{activityProgramId,jdbcType=INTEGER},
+      ACTIVITY_PROGRAM_SUB_ID = #{activityProgramSubId,jdbcType=INTEGER},
+      ACTUAL_COST = #{actualCost,jdbcType=DECIMAL},
+      ACTUAL_COST_MALL = #{actualCostMall,jdbcType=DECIMAL},
+      ACTUAL_COST_TENANT = #{actualCostTenant,jdbcType=DECIMAL},
+      ACTUAL_COST_THIRD = #{actualCostThird,jdbcType=DECIMAL},
+      ACTUAL_COST_PR = #{actualCostPr,jdbcType=DECIMAL},
+      ACTUAL_COST_MALL_PR = #{actualCostMallPr,jdbcType=DECIMAL},
+      ACTUAL_COST_TENANT_PR = #{actualCostTenantPr,jdbcType=DECIMAL},
+      ACTUAL_COST_THIRD_PR = #{actualCostThirdPr,jdbcType=DECIMAL},
+      ACTUAL_COST_SP = #{actualCostSp,jdbcType=DECIMAL},
+      ACTUAL_COST_MALL_SP = #{actualCostMallSp,jdbcType=DECIMAL},
+      ACTUAL_COST_TENANT_SP = #{actualCostTenantSp,jdbcType=DECIMAL},
+      ACTUAL_COST_THIRD_SP = #{actualCostThirdSp,jdbcType=DECIMAL},
+      ACTUAL_COST_CRM = #{actualCostCrm,jdbcType=DECIMAL},
+      ACTUAL_COST_MALL_CRM = #{actualCostMallCrm,jdbcType=DECIMAL},
+      ACTUAL_COST_TENANT_CRM = #{actualCostTenantCrm,jdbcType=DECIMAL},
+      ACTUAL_COST_THIRD_CRM = #{actualCostThirdCrm,jdbcType=DECIMAL},
+      ACTUAL_COST_EC = #{actualCostEc,jdbcType=DECIMAL},
+      ACTUAL_COST_MALL_EC = #{actualCostMallEc,jdbcType=DECIMAL},
+      ACTUAL_COST_TENANT_EC = #{actualCostTenantEc,jdbcType=DECIMAL},
+      ACTUAL_COST_THIRD_EC = #{actualCostThirdEc,jdbcType=DECIMAL},
+      IS_DELETED = #{isDeleted,jdbcType=VARCHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_BY_NAME = #{createByName,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      LAST_UPDATE_BY = #{lastUpdateBy,jdbcType=VARCHAR},
+      LAST_UPDATE_BY_NAME = #{lastUpdateByName,jdbcType=VARCHAR},
+      LAST_UPDATE_DATE = #{lastUpdateDate,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

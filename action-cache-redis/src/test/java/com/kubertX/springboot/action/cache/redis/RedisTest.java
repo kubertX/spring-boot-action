@@ -2,7 +2,8 @@ package com.kubertX.springboot.action.cache.redis;
 
 import com.kubertX.springboot.action.cache.redis.model.User;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
